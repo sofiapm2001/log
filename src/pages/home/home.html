@@ -1,14 +1,38 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Iniciar Sesion
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+    <ion-item-sliding *ngFor="let u of user">
+      <ion-item>
+          <ion-card >
+                {{u.name}}
+            </ion-card>
+            <ion-card >
+              {{u.contra}}
+          </ion-card>
+      </ion-item>
+      </ion-item-sliding>
+     
+  
+
+  <ion-item>
+    <ion-input [(ngModel)]="name" placeholder="ejemplo@gmail.com"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="contra" placeholder="password"></ion-input>
+  </ion-item>
+
+
+  <button ion-button block (click)="clicksesion()">Iniciar sesion</button>
+
+  <button ion-button block (click)="clickRegis()">Registrar</button>
+
 </ion-content>
+
